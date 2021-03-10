@@ -1,0 +1,33 @@
+
+<!-- @Input() allows a parent component to update data in the child component. 
+    @Output() allows the child to send data to a parent component.
+ -->
+  
+  <!-- Pass data from parent -> child -->
+
+<div class="border border-danger">
+
+
+<h3>child of Hero Component</h3>
+  
+  <div *ngIf="selectedHero">
+
+    <h2>{{selectedHero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedHero.id}}</div>
+  <div>
+    <label for="hero-name">Hero name: </label>
+    <!-- Look up how ngModel works -->
+    <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+  </div>
+  </div>
+
+
+  <label for="sendToParent">
+    Send data to parent     
+  </label>
+  <!-- Use @Output -->
+  <input id ="sendToParent" type="text" (keydown)="onKey($event)" > 
+
+  {{dataSendParent}}
+  
+  </div>
