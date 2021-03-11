@@ -9,25 +9,24 @@
 
 
 <h3>child of Hero Component</h3>
-  
+<!--   
   <div *ngIf="selectedHero">
 
     <h2>{{selectedHero.name | uppercase}} Details</h2>
   <div><span>id: </span>{{selectedHero.id}}</div>
   <div>
     <label for="hero-name">Hero name: </label>
-    <!-- Look up how ngModel works -->
     <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
   </div>
-  </div>
+  </div> -->
 
 
-  <label for="sendToParent">
-    Send data to parent     
-  </label>
-  <!-- Use @Output -->
-  <input id ="sendToParent" type="text" (keydown)="onKey($event)" > 
-
-  {{dataSendParent}}
+    <label for="sendToParent">
+      Send data to parent     
+    </label>
+    <!-- Use @Output -->
+    <!-- <input #dataSendParent id ="sendToParent" (keydown) = "onKey($event)" type="text" >  -->
+  
   
   </div>
+  <router-outlet></router-outlet>

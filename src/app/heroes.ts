@@ -1,5 +1,6 @@
 
 export interface Hero{
     id: number,
-    name: string
+    name: string,
+    // points: number,
 }

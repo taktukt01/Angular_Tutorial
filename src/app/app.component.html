@@ -4,9 +4,20 @@
 
 <h3>root component </h3>
 
-<app-heroes></app-heroes>
+<h1 id="main-content-header">{{title}}</h1>
+<nav>
+    <a routerLink="/dashboard">Dashboard      </a> 
+  <a routerLink="/heroes">Heroes</a>
+</nav>
+<router-outlet></router-outlet>
+<app-messages></app-messages>
+
+
+<!-- Displays route -->
+<router-outlet></router-outlet>
+
+<app-messages></app-messages>
 
 </div>
 
 
-<router-outlet></router-outlet>

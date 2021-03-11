@@ -18,29 +18,23 @@ implement @Output
 
 <h3>Hero Component</h3>
 
-<div>
-    <!-- Two way data binding -->
+<!-- <div>
     <label for="name">Hero name: </label>
-    <input id="name" [(ngModel)]="hero.name" placeholder="name">
-  </div>
+    <input id="name" [(ngModel)]="heroes.name" placeholder="name">
+  </div> -->
 
 
   <ul class="heroes">
-<!--  class binding
-applies css when condiiton is met -->
-  <li *ngFor= "let hero of heroes" [class.selected]="hero === selectedHero" (click)= "onSelect(hero)">
-
-    <span  class="badge">{{hero.id}}</span> {{hero.name}}
-
-  </li>
-
+    <li *ngFor="let hero of heroes">
+      <a routerLink="/detail/{{hero.id}}">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+      </a>
+    </li>
   </ul>
 
 <!-- @Input property injected -->
 <!-- Use property binding to bind the item property in the child to the currentItem property of the parent.
  -->
-<app-hero-detail [selectedHero]="selectedHero"></app-hero-detail>
-
 
 </div>
-<router-outlet></router-outlet>
+
