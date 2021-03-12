@@ -1,7 +1,10 @@
 <!-- Grab highest points heroes -->
 <h2>Top Heroes</h2>
 <div class="heroes-menu">
+ 
   <a *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}">
       {{hero.name}}
   </a>
 </div>
+<!-- The routed views render in the <router-outlet>-->
+<router-outlet></router-outlet>

@@ -14,27 +14,38 @@ TODO:
 implement @Output
 
  -->
- <div class= "border border-secondary">
+<div class="border border-secondary">
 
-<h3>Hero Component</h3>
+  <h3>Hero Component</h3>
 
-<!-- <div>
+  <!-- <div>
     <label for="name">Hero name: </label>
     <input id="name" [(ngModel)]="heroes.name" placeholder="name">
   </div> -->
 
 
   <ul class="heroes">
-    <li *ngFor="let hero of heroes">
+    <li *ngFor="let hero of hero">
       <a routerLink="/detail/{{hero.id}}">
         <span class="badge">{{hero.id}}</span> {{hero.name}}
       </a>
     </li>
   </ul>
 
-<!-- @Input property injected -->
-<!-- Use property binding to bind the item property in the child to the currentItem property of the parent.
+  <!-- @Input property injected -->
+  <!-- Use property binding to bind the item property in the child to the currentItem property of the parent.
  -->
+  <div>
+    <label id="new-hero">Hero name: </label>
+    <input for="new-hero" #heroName />
+
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button class="add-button" (click)="add(heroName.value); heroName.value=''">
+      Add hero
+    </button>
+  </div>
+
 
 </div>
 
+<router-outlet></router-outlet>

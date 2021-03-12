@@ -1,14 +1,9 @@
-
 <!-- @Input() allows a parent component to update data in the child component. 
     @Output() allows the child to send data to a parent component.
  -->
-  
-  <!-- Pass data from parent -> child -->
 
-<div class="border border-danger">
+<!-- Pass data from parent -> child -->
 
-
-<h3>child of Hero Component</h3>
 <!--   
   <div *ngIf="selectedHero">
 
@@ -21,12 +16,23 @@
   </div> -->
 
 
-    <label for="sendToParent">
-      Send data to parent     
-    </label>
-    <!-- Use @Output -->
-    <!-- <input #dataSendParent id ="sendToParent" (keydown) = "onKey($event)" type="text" >  -->
-  
-  
-  </div>
-  <router-outlet></router-outlet>
+<!-- Use @Output -->
+<!-- <input #dataSendParent id ="sendToParent" (keydown) = "onKey($event)" type="text" >  -->
+
+<p class="h2">{{hero.name | uppercase}} Details</p>
+
+<p>id: {{hero.id}}</p>
+
+<label for="selectedHero">
+  Hero Name:
+</label>
+<!-- two way data bind -->
+<input type="text" id="selectedHero" [(ngModel)]="hero.name">
+<br>
+
+<br>
+<button class="btn btn-sm" (click)="deleteHero()">Delete</button>
+<button class="btn btn-sm" (click)="goBack()">Go back</button>
+
+
+<router-outlet></router-outlet>

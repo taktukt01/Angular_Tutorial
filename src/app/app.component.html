@@ -1,23 +1,14 @@
-<div class="border border-primary"> 
-
-
-
-<h3>root component </h3>
 
 <h1 id="main-content-header">{{title}}</h1>
 <nav>
     <a routerLink="/dashboard">Dashboard      </a> 
   <a routerLink="/heroes">Heroes</a>
 </nav>
+
+
+<!-- for every routerLink we have,
+we need a router-outlet (?) -->
 <router-outlet></router-outlet>
 <app-messages></app-messages>
-
-
-<!-- Displays route -->
-<router-outlet></router-outlet>
-
-<app-messages></app-messages>
-
-</div>
 
 

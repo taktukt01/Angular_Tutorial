@@ -9,7 +9,7 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-  heroes: Hero[] = [];
+  hero: Hero[] = [];
 
   constructor(private heroService: HeroService) { }
 
@@ -19,6 +19,15 @@ export class HeroesComponent implements OnInit {
 
   getHeroes(): void {
     this.heroService.getHeroes()
-    .subscribe(heroes => this.heroes = heroes);
+      .subscribe(heroes => this.hero = heroes);
   }
+
+  add(name: string): void {
+    name = name.trim(); // removes whitespace
+    this.heroService.addHero({ name } as Hero)
+      .subscribe(heroes => this.hero.push(heroes));
+
+  }
+
+ 
 }

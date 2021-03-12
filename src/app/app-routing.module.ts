@@ -20,7 +20,7 @@ const routes: Routes = [
   },
 
   {
-    path: "details/:id",
+    path: "detail/:id",
     component: HeroDetailComponent
   }
 
